@@ -3,9 +3,23 @@ import LaptopImg from '@assets/laptop.jpg'
 import { Typography } from "@components/Typography"
 import { Button } from "@components/Button"
 
+import {BlockText, ServiceContainer, ServiceItemContainer, ServiceItemImage, ServiceItemTextContainer, ServiceItemsSection} from './style'
+
+import WebServiceImg from '@assets/website_service.png';
+import AppServiceImg from '@assets/app_service.png';
+import WebAppServiceImg from '@assets/webApp_service.png'
+import { serviceDescription } from "../../constants/home"
+
+type ServiceItemProps = {
+    title: string;
+    description: string;
+    image: string;
+}
+
 const MainContainer = styled.div`
     display: flex;
     flex-flow: column nowrap;
+    gap: 50px;
 `
 
 const HeroContainer = styled.section`
@@ -42,29 +56,73 @@ const TextRow = styled.div`
     width: 100%;
 `
 
+
+
+const HeroSection = () => {
+    return(
+        <HeroContainer>
+            <HeroImage src={LaptopImg}/>
+            <HeroDescriptionContainer>
+                <Typography variant="h5" color="white">SOFTWARE DEVELOPMENT SERVICE</Typography>
+                <TextRow>
+                    <Typography style={{
+                        maxWidth: '500px',
+                        textAlign: 'left'
+                    }} variant="h1" color="white">
+                        We are a website & app
+                        &nbsp; <span>development agency</span>
+                    </Typography>
+                    <Button style={{
+                        padding: '15px 30px'
+                    }} color="blue" backgroundColor="white">
+                        Get in touch
+                    </Button>
+                </TextRow>
+            </HeroDescriptionContainer>
+        </HeroContainer>
+    )
+}
+
+
+const ServiceItem = ({title, description, image}:ServiceItemProps) => {
+    return(
+        <ServiceItemContainer>
+            <ServiceItemImage src={image} />
+            <ServiceItemTextContainer>
+                <Typography variant="h3" color="white">{title}</Typography>
+                <Typography style={{
+                    lineHeight: '24px'
+                }} variant="h4" color="gray">{description}</Typography>
+            </ServiceItemTextContainer>
+        </ServiceItemContainer>
+    )
+}
+
+const ServiceSection = () => {
+    return(
+        <ServiceContainer>
+            <Typography variant="h5" color="gray">Our Service</Typography>
+            <Typography style={{
+                lineHeight: '45px'
+            }} variant="h1" color="white">
+                We help business to make their 
+                <BlockText>product come to life, worldwide.</BlockText>
+            </Typography>
+
+            <ServiceItemsSection>
+                <ServiceItem title="Website development" description={serviceDescription.web} image={WebServiceImg} />
+                <ServiceItem title="Website app development" description={serviceDescription.webApp} image={WebAppServiceImg} />
+                <ServiceItem title="Mobile app development" description={serviceDescription.mobile} image={AppServiceImg} />
+            </ServiceItemsSection>
+        </ServiceContainer>
+    )
+}
+
 export const HomePage = () => {
     return(
         <MainContainer>
-            <HeroContainer>
-                <HeroImage src={LaptopImg}/>
-                <HeroDescriptionContainer>
-                    <Typography variant="h5" color="white">SOFTWARE DEVELOPMENT SERVICE</Typography>
-                    <TextRow>
-                        <Typography style={{
-                            maxWidth: '500px',
-                            textAlign: 'left'
-                        }} variant="h1" color="white">
-                            We are a website & app
-                            &nbsp; <span>development agency</span>
-                        </Typography>
-                        <Button style={{
-                            padding: '15px 30px'
-                        }} color="blue" backgroundColor="white">
-                            Get in touch
-                        </Button>
-                    </TextRow>
-                </HeroDescriptionContainer>
-            </HeroContainer>
+            <HeroSection />
+            <ServiceSection />
         </MainContainer>
     )
 }
