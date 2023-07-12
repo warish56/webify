@@ -10,6 +10,7 @@ type btnProps = {
   children: React.ReactNode;
   backgroundColor: BackgroundColor
   color: Color;
+  fullWidth: boolean;
 }
 
 const getBackgroundColor = (color: BackgroundColor) => {
@@ -35,18 +36,20 @@ const StyledButton = styled.button<StyledProps<btnProps>>`
     cursor: pointer;
     padding: 10px 20px;
     border-radius: 27px;
-    ${({theme, $color, $backgroundColor}) => {
+   
+    ${({theme, $color, $backgroundColor, $fullWidth}) => {
         return `
             ${theme.typography.btn_medium}
             background-color: ${getBackgroundColor($backgroundColor)};
             color: ${getColor($color)};
+            width: ${$fullWidth ? 'auto': 'max-content'};
         `
     }}
 `
 
-export const Button = ({children, backgroundColor,color, ...rest}:btnProps&NativeProps<HTMLButtonElement>) => {
+export const Button = ({children, backgroundColor,color, fullWidth=false, ...rest}:btnProps&NativeProps<HTMLButtonElement>) => {
     return(
-        <StyledButton $backgroundColor={backgroundColor} $color={color} {...rest}>
+        <StyledButton $backgroundColor={backgroundColor} $color={color} $fullWidth={fullWidth}  {...rest}>
             <Typography variant="btn_small" color="blue">
                 {children}
             </Typography>

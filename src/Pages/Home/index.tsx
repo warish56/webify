@@ -3,11 +3,26 @@ import LaptopImg from '@assets/laptop.jpg'
 import { Typography } from "@components/Typography"
 import { Button } from "@components/Button"
 
-import {BlockText, ServiceContainer, ServiceItemContainer, ServiceItemImage, ServiceItemTextContainer, ServiceItemsSection} from './style'
+import {
+    AboutAnalyticsContainer, 
+    AboutAnalyticsItemContainer, 
+    AboutContainer, 
+    AboutImageConatiner, 
+    AboutTextContainer, 
+    BlockText, 
+    ServiceContainer, 
+    ServiceItemContainer, 
+    ServiceItemImage, 
+    ServiceItemTextContainer, 
+    ServiceItemsSection,
+    AboutImage
+} from './style'
 
 import WebServiceImg from '@assets/website_service.png';
 import AppServiceImg from '@assets/app_service.png';
 import WebAppServiceImg from '@assets/webApp_service.png'
+import WorkImg from '@assets/working.jpg'
+
 import { serviceDescription } from "../../constants/home"
 
 type ServiceItemProps = {
@@ -15,6 +30,12 @@ type ServiceItemProps = {
     description: string;
     image: string;
 }
+
+type AnalyticsItemProps = {
+    title: string;
+    description: string;
+}
+
 
 const MainContainer = styled.div`
     display: flex;
@@ -118,11 +139,56 @@ const ServiceSection = () => {
     )
 }
 
+
+const AnalyticsItem = ({title, description}:AnalyticsItemProps) => {
+    return(
+        <AboutAnalyticsItemContainer>
+            <Typography color="black" variant="h2">{title}</Typography>
+            <Typography color="gray" variant="h4">{description}</Typography>
+        </AboutAnalyticsItemContainer>
+    )
+}
+
+const AboutUsSection = () => {
+    return(
+        <AboutContainer>
+            <AboutTextContainer>
+
+                <Typography color="gray" variant="h5">ABOUT US</Typography>
+                <Typography color="black" variant="h1">The team will turn your ideas into reality</Typography>
+                <Typography color="gray" variant="body" style={{
+                    lineHeight: "25px"
+                }}>
+                    We feel in this digital age, connection is required to develop
+                    a successful corporate empire. Having user-focused websites
+                    or mobile applications that are simple to use can increase your
+                    market competitivness.
+                </Typography>
+
+                <Button backgroundColor="light_blue" color="blue">More about us</Button>
+
+                <AboutAnalyticsContainer>
+                    <AnalyticsItem title="8" description="Operated Years"/>
+                    <AnalyticsItem title="200+" description="Happy Clients"/>
+                    <AnalyticsItem title="40+" description="Professionals"/>
+                    <AnalyticsItem title="650+" description="Amazing Project"/>
+                </AboutAnalyticsContainer>
+
+            </AboutTextContainer>
+            <AboutImageConatiner>
+                <AboutImage src={WorkImg} alt="user working on laptop"/>
+            </AboutImageConatiner>
+        </AboutContainer>
+
+    )
+}
+
 export const HomePage = () => {
     return(
         <MainContainer>
             <HeroSection />
             <ServiceSection />
+            <AboutUsSection />
         </MainContainer>
     )
 }

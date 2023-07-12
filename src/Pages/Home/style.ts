@@ -43,3 +43,50 @@ export const ServiceItemTextContainer = styled.div`
     text-align: left;
     gap: 20px;
 `
+
+export const AboutContainer = styled.section`
+display: flex;
+flex-flow: row wrap;
+gap:100px;
+align-items: flex-end;
+`
+
+export const AboutTextContainer = styled.div`
+ display: flex;
+ flex-flow: column nowrap;
+ gap: 20px;
+ padding-left: 50px;
+ flex-basis: 40%;
+ text-align: left;
+`
+
+export const AboutImageConatiner = styled.div`
+ flex-basis: 40%;
+ border-radius: 18px;
+ overflow: hidden;
+ flex-shrink: 0;
+ flex-grow:2;
+`
+
+export const AboutImage = styled.img`
+ max-width: 100%;
+ object-fit: cover;
+`
+
+export const AboutAnalyticsContainer = styled.div`
+ border-radius: 18px;
+ margin-top: 30px;
+ border: 1px solid #e3e3e3;
+ padding: 50px;
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ grid-row-gap: 50px;
+ grid-column-gap: 50px;
+`
+
+export const AboutAnalyticsItemContainer = styled.div`
+display: flex;
+flex-flow: column nowrap;
+gap: 10px;
+text-align: center;
+`
