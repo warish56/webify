@@ -11,7 +11,7 @@ type LinkProps = {
 const Container = styled.section`
  display: flex;
  justify-content: space-between;
- align-item: center;
+ align-items: center;
  width: 100%;
  margin-bottom: 40px;
 `

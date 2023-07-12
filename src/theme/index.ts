@@ -16,7 +16,7 @@ export const typography = {
     h1: `
         font-family: 'Roboto', sans-serif;
         font-size: 34px;
-        font-weight: 500;
+        font-weight: 700;
     `,
 
     h2: `
