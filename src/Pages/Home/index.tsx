@@ -104,7 +104,7 @@ const WorkSection = () => {
       <WorkSectionDescContainer>
         <DivContainer1>
           {/* <Typography variant="h6" color="black">OUR WORK</Typography> */}
-          <Typography variant="h7" color="black">
+          <Typography variant="h2" color="black">
             We help businesses to make their product come to life, worldwide
           </Typography>
         </DivContainer1>

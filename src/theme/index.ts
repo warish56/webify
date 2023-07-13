@@ -49,11 +49,6 @@ export const typography = {
         font-weight: 500;
     `,
 
-    h7: `
-        font-family: 'Roboto', sans-serif;
-        font-size: 30px;
-        font-weight: 600;
-   `,
     
 
     body: `
