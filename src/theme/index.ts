@@ -49,6 +49,13 @@ export const typography = {
         font-weight: 500;
     `,
 
+    h7: `
+        font-family: 'Roboto', sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+   `,
+    
+
     body: `
         font-family: 'Roboto', sans-serif;
         font-size: 15px;
@@ -66,6 +73,7 @@ export const typography = {
         font-size: 13px;
         font-weight: 700;
     `,
+
 }
 
 export const theme = {
