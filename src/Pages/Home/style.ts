@@ -90,3 +90,93 @@ flex-flow: column nowrap;
 gap: 10px;
 text-align: center;
 `
+export const TestimonialConatiner = styled.section`
+display: flex;
+flex-flow: column nowrap;
+gap: 30px;
+padding-left: 50px;
+padding-top: 50px;
+
+`
+export const TestimonialHeaderContainer = styled.div`
+display: flex;
+flex-flow: column nowrap;
+gap: 20px;
+text-align: left;
+`
+
+export const TestimonialContentContainer = styled.div`
+display: flex;
+flex-flow: row wrap;
+gap: 20px;
+`
+
+export const TestimonialContentLeft = styled.div`
+display: flex;
+flex-flow: column nowrap;
+border-radius: 18px;
+border: 1px lightgray solid;
+flex-basis: 70%;
+overflow: hidden;
+`
+
+export const TestimonailTextContainer = styled.div`
+flex-grow: 1;
+display: flex;
+justify-content: center;
+line-height: 40px;
+padding: 50px;
+text-align: left;
+padding-right: 100px;
+
+`
+
+export const TestimonialContentRight = styled.div`
+display: flex;
+flex-flow: column nowrap;
+border-radius: 18px;
+background-color: ${props => props.theme.pallete.blue.primary};
+flex-basis: min-content;
+align-items: center;
+justify-content: flex-end;
+padding: 40px;
+gap: 20px;
+`
+
+export const TestimonialFooter = styled.div`
+display: flex;
+align-items: center;
+padding: 30px 50px;
+background-color: ${props=> props.theme.pallete.gray.light};
+`
+
+export const TestimonialUserContainer = styled.div`
+display: flex;
+gap: 10px;
+align-items: center;
+`
+
+export const TestimonialActionContainer = styled.div`
+display: flex;
+gap: 10px;
+margin-left: auto;
+`
+
+export const UserPic = styled.img`
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ overflow: hidden;
+ object-fit: cover;
+`
+
+export const ActionButton = styled.button`
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: white;
+border: 1px solid lightgray;
+`

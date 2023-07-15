@@ -15,7 +15,18 @@ import {
     ServiceItemImage, 
     ServiceItemTextContainer, 
     ServiceItemsSection,
-    AboutImage
+    AboutImage,
+    TestimonialConatiner,
+    TestimonialHeaderContainer,
+    TestimonialContentContainer,
+    TestimonialContentLeft,
+    TestimonialContentRight,
+    TestimonialFooter,
+    TestimonialUserContainer,
+    TestimonialActionContainer,
+    UserPic,
+    ActionButton,
+    TestimonailTextContainer
 } from './style'
 
 import WebServiceImg from '@assets/website_service.png';
@@ -23,7 +34,8 @@ import AppServiceImg from '@assets/app_service.png';
 import WebAppServiceImg from '@assets/webApp_service.png'
 import WorkImg from '@assets/working.jpg'
 
-import { serviceDescription } from "../../constants/home"
+import { serviceDescription, testimonialData } from "../../constants/home"
+import { useState } from "react"
 
 type ServiceItemProps = {
     title: string;
@@ -77,6 +89,44 @@ const TextRow = styled.div`
     width: 100%;
 `
 
+const Testimonial = () => {
+    const [currentIndex, setIndex] = useState(0);
+
+    const currentData = testimonialData[currentIndex];
+
+    return(
+        <TestimonialConatiner>
+            <TestimonialHeaderContainer>
+                <Typography color="gray" variant="h5">TESTIMONIALS</Typography>
+                <Typography color="black" variant="h2">What they say about us</Typography>
+            </TestimonialHeaderContainer>
+            <TestimonialContentContainer>
+                <TestimonialContentLeft>
+                    <TestimonailTextContainer>
+                            <Typography color="black" variant="quote">
+                                {currentData.feedback}
+                            </Typography>
+                        </TestimonailTextContainer>
+
+                    <TestimonialFooter>
+                        <TestimonialUserContainer>
+                            <UserPic src={currentData.pic} alt="user photo"/>
+                            <Typography variant="h3" color="black">{currentData.userName}</Typography>
+                        </TestimonialUserContainer>
+                        <TestimonialActionContainer>
+                            <ActionButton onClick={() => setIndex(val => Math.max(0, val-1))}>{`<`}</ActionButton>
+                            <ActionButton onClick={() => setIndex(val => Math.min(val+1, testimonialData.length-1))}>{`>`}</ActionButton>
+                        </TestimonialActionContainer>
+                    </TestimonialFooter>
+                </TestimonialContentLeft>
+                <TestimonialContentRight>
+                    <Typography color="white" variant="h2">Want to estimate your project?</Typography>
+                    <Button backgroundColor="white" color="black">Project estimation</Button>
+                </TestimonialContentRight>
+            </TestimonialContentContainer>
+        </TestimonialConatiner>
+    )
+}
 
 
 const HeroSection = () => {
@@ -189,6 +239,7 @@ export const HomePage = () => {
             <HeroSection />
             <ServiceSection />
             <AboutUsSection />
+            <Testimonial />
         </MainContainer>
     )
 }

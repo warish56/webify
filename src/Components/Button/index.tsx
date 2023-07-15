@@ -10,7 +10,7 @@ type btnProps = {
   children: React.ReactNode;
   backgroundColor: BackgroundColor
   color: Color;
-  fullWidth: boolean;
+  fullWidth?: boolean;
 }
 
 const getBackgroundColor = (color: BackgroundColor) => {
