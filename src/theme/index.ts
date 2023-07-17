@@ -25,6 +25,12 @@ export const typography = {
         font-weight: 500;
     `,
 
+    quote: `
+        font-family: 'Roboto', sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+    `,
+
     h3: `
         font-family: 'Roboto', sans-serif;
         font-size: 18px;
