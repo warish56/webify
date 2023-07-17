@@ -180,3 +180,48 @@ align-items: center;
 background-color: white;
 border: 1px solid lightgray;
 `
+
+
+export const ContactUsContainer = styled.section`
+ display: flex;
+ flex-flow: column nowrap;
+ justify-content: center;
+ text-align: center;
+ gap: 10px;
+ padding: 20px 50px;
+ border-radius: 18px;
+ background-color: black;
+ min-height: 600px;
+`
+
+export const ContactUsContent = styled.div`
+ flex-grow: 1;
+ display: flex;
+ flex-flow: column nowrap;
+ justify-content: center;
+ align-items: center;
+`
+
+export const ContactUsLinksContainer = styled.div`
+display: flex;
+align-items:center;
+justify-content: center;
+gap: 15px;
+padding-bottom: 30px;
+border-bottom: 1px lightgray solid;
+margin-top: auto;
+`
+
+export const ContactUsPolicyContainer = styled.div`
+padding: 15px;
+display: flex;
+align-items:center;
+`
+
+export const ContactUsPolicyContent = styled.div`
+gap: 15px;
+display: flex;
+align-items:center;
+justify-content: space-between;
+margin-left: auto;
+`

@@ -50,7 +50,7 @@ const StyledButton = styled.button<StyledProps<btnProps>>`
 export const Button = ({children, backgroundColor,color, fullWidth=false, ...rest}:btnProps&NativeProps<HTMLButtonElement>) => {
     return(
         <StyledButton $backgroundColor={backgroundColor} $color={color} $fullWidth={fullWidth}  {...rest}>
-            <Typography variant="btn_small" color="blue">
+            <Typography variant="btn_small" color={color === 'white' ? 'white' : "blue"}>
                 {children}
             </Typography>
         </StyledButton>

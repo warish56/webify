@@ -26,7 +26,12 @@ import {
     TestimonialActionContainer,
     UserPic,
     ActionButton,
-    TestimonailTextContainer
+    TestimonailTextContainer,
+    ContactUsContainer,
+    ContactUsLinksContainer,
+    ContactUsPolicyContainer,
+    ContactUsPolicyContent,
+    ContactUsContent
 } from './style'
 
 import WebServiceImg from '@assets/website_service.png';
@@ -88,6 +93,37 @@ const TextRow = styled.div`
     justify-content: space-between;
     width: 100%;
 `
+
+
+const ContactUs = () => {
+    return(
+        <ContactUsContainer>
+            <ContactUsContent>
+                <Typography style={{marginBottom: '20px'}} variant="h5" color="gray">CONTACT US</Typography>
+                <Typography variant="h1" color="white">You've got this far.</Typography>
+                <Typography variant="h1" color="white">Ready to get started?</Typography>
+                <Button  style={{marginTop: '40px'}} color="white" backgroundColor="primary_blue">Get in touch </Button>
+            </ContactUsContent>
+            <ContactUsLinksContainer>
+                <Typography variant="h5" color="gray">Works</Typography>
+                <Typography variant="h5" color="gray">Services</Typography>
+                <Typography variant="h5" color="gray">About</Typography>
+                <Typography variant="h5" color="gray">Blog</Typography>
+                <Typography variant="h5" color="gray">Carrers</Typography>
+            </ContactUsLinksContainer>
+            <ContactUsPolicyContainer>
+                <Typography variant="h5" color="gray">Copyright @2022,Inc. All rights reserved</Typography>
+                <ContactUsPolicyContent>
+                    <Typography variant="h5" color="gray">Privacy Policy</Typography>
+                    <Typography variant="h5" color="gray">FAQ</Typography>
+                    <Typography variant="h5" color="gray">Terms of service</Typography>
+                </ContactUsPolicyContent>
+            </ContactUsPolicyContainer>
+            
+        </ContactUsContainer>
+    )
+}
+
 
 const Testimonial = () => {
     const [currentIndex, setIndex] = useState(0);
@@ -240,6 +276,7 @@ export const HomePage = () => {
             <ServiceSection />
             <AboutUsSection />
             <Testimonial />
+            <ContactUs />
         </MainContainer>
     )
 }
